@@ -6,17 +6,24 @@ const SignatureAnimation = () => {
   useEffect(() => {
     if (!svgRef.current) return;
     const paths = svgRef.current.querySelectorAll("path");
+    const totalPaths = paths.length;
+    const totalDuration = totalPaths * 0.06 + 0.4; // total animation time in seconds
+    
     paths.forEach((path, index) => {
-      const length = path.getTotalLength();
-      path.style.strokeDasharray = String(length);
-      path.style.strokeDashoffset = String(length);
-      path.style.animation = `draw 0.4s ease-in-out ${index * 0.06}s forwards`;
+      const delay = index * 0.06;
+      path.style.clipPath = "inset(0 100% 0 0)";
+      path.style.animation = `reveal 0.4s ease-in-out ${delay}s forwards`;
     });
   }, []);
 
   return (
     <>
-      <style>{"@keyframes draw { to { stroke-dashoffset: 0; } }"}</style>
+      <style>{`
+        @keyframes reveal {
+          from { clip-path: inset(0 100% 0 0); }
+          to { clip-path: inset(0 0% 0 0); }
+        }
+      `}</style>
       <svg
         ref={svgRef}
         viewBox="176.764 281.041 855.720 81.128"
