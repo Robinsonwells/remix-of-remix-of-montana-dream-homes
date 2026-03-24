@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSlideshow from "@/components/HeroSlideshow";
+import SignatureAnimation from "@/components/SignatureAnimation";
 import Testimonials from "@/components/Testimonials";
 import MontanaLifestyle from "@/components/MontanaLifestyle";
 import AboutSection from "@/components/AboutSection";
