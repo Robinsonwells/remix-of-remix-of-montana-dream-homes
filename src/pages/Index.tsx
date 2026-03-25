@@ -19,6 +19,7 @@ const Index = () => {
           <div className="w-full max-w-4xl px-4">
             <SignatureAnimation />
           </div>
+          <p className="text-lg md:text-2xl text-white/90 mt-4 font-display tracking-wide animate-fade-in">Your next move starts here</p>
         </div>
       </section>
 
