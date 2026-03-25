@@ -3,6 +3,7 @@ import { Mountain, TreePine, Sunrise, ChevronDown } from "lucide-react";
 import lifestyle1 from "@/assets/montana-lifestyle-1.jpg";
 import lifestyle2 from "@/assets/montana-lifestyle-2.jpg";
 import lifestyle3 from "@/assets/montana-lifestyle-3.jpg";
+import montanaExplore from "@/assets/montana-explore.jpg";
 
 const sections = [
   {
