@@ -56,13 +56,13 @@ const MontanaLifestyle = () => {
             />
             <div className="absolute inset-0 bg-foreground/40 group-hover:bg-foreground/30 transition-colors duration-300" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-              <p className="font-body text-sm tracking-[0.3em] uppercase mb-2 opacity-80">
+              <p className="font-body text-xs md:text-sm tracking-[0.3em] uppercase mb-2 opacity-80">
                 Life in Montana
               </p>
-              <h2 className="text-3xl md:text-5xl font-display mb-3">
+              <h2 className="text-2xl md:text-5xl font-display mb-2 md:mb-3 px-4">
                 Where Adventure Meets Home
               </h2>
-              <p className="text-lg font-body opacity-90">
+              <p className="text-sm md:text-lg font-body opacity-90">
                 Click to explore life in Montana
               </p>
               <ChevronDown
