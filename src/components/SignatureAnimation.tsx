@@ -5,23 +5,44 @@ const SignatureAnimation = () => {
 
   useEffect(() => {
     if (!svgRef.current) return;
-    const paths = svgRef.current.querySelectorAll("path");
-    const totalPaths = paths.length;
-    const totalDuration = totalPaths * 0.06 + 0.4; // total animation time in seconds
-    
-    paths.forEach((path, index) => {
-      const delay = index * 0.06;
-      path.style.clipPath = "inset(0 100% 0 0)";
-      path.style.animation = `reveal 0.4s ease-in-out ${delay}s forwards`;
+    const paths = Array.from(svgRef.current.querySelectorAll("path"));
+
+    // Get each path's starting x from its 'd' attribute
+    const pathData = paths.map((path, idx) => {
+      const d = path.getAttribute("d") || "";
+      const match = d.match(/M\s*([\d.]+)/);
+      const x = match ? parseFloat(match[1]) : 0;
+      return { path, x, idx };
+    });
+
+    // Sort by x position and group into letters (paths within 25px = same letter)
+    const sorted = [...pathData].sort((a, b) => a.x - b.x);
+    let letterIndex = 0;
+    const letterMap = new Map<number, number>(); // path idx -> letter index
+    letterMap.set(sorted[0].idx, 0);
+    for (let i = 1; i < sorted.length; i++) {
+      if (sorted[i].x - sorted[i - 1].x > 25) {
+        letterIndex++;
+      }
+      letterMap.set(sorted[i].idx, letterIndex);
+    }
+
+    // Animate: each letter group appears together, one letter at a time
+    const delayPerLetter = 0.15; // seconds between each letter
+    paths.forEach((path, idx) => {
+      const letter = letterMap.get(idx) || 0;
+      const delay = letter * delayPerLetter;
+      path.style.opacity = "0";
+      path.style.animation = `letterReveal 0.35s ease-out ${delay}s forwards`;
     });
   }, []);
 
   return (
     <>
       <style>{`
-        @keyframes reveal {
-          from { clip-path: inset(0 100% 0 0); }
-          to { clip-path: inset(0 0% 0 0); }
+        @keyframes letterReveal {
+          0% { opacity: 0; clip-path: inset(0 60% 0 0); transform: translateY(2px); }
+          100% { opacity: 1; clip-path: inset(0 0% 0 0); transform: translateY(0); }
         }
       `}</style>
       <svg
