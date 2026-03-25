@@ -5,6 +5,7 @@ import profileImg from "@/assets/victoria-profile.jpg";
 const AboutSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,11 +38,35 @@ const AboutSection = () => {
             
             <div className="space-y-5 text-muted-foreground font-body leading-relaxed">
               <p>
-                Victoria has enjoyed helping families accomplish their dreams of owning a home and assisting in their real estate needs for 20 years. Working closely with buyers and sellers, she specializes in residential properties in Billings and surrounding areas. A highlight of her business is developing relationships that ultimately lead to lasting friendships. Her depth of experience, integrity, and knowledge in the real estate industry, intertwined with innovative technology, displays her commitment and dedication to her clients.
+                Victoria has enjoyed helping families accomplish their dreams of owning a home and assisting in their real estate needs for 20 years. Working closely with buyers and sellers, she specializes in residential properties in Billings and surrounding areas. A highlight of her business is developing relationships that ultimately lead to lasting friendships.
+                {!showMore && (
+                  <span>
+                    ...{" "}
+                    <button
+                      onClick={() => setShowMore(true)}
+                      className="text-accent hover:text-accent/80 font-medium transition-colors inline"
+                    >
+                      Show more
+                    </button>
+                  </span>
+                )}
               </p>
-              <p>
-                Victoria was raised in Western Montana and appreciates what this beautiful state has to offer to those locally and for those who are planning to make it their home. She attended the University of Montana and Montana State University – Billings, earning her Bachelor of Science in Business Administration degree with an emphasis in marketing. During the summer months, you would likely see her on the golf course contributing to a fun group tournament or competing in state-level championships. She also enjoys hiking and skiing. Above all, Victoria loves spending time with her family.
-              </p>
+              {showMore && (
+                <>
+                  <p>
+                    Her depth of experience, integrity, and knowledge in the real estate industry, intertwined with innovative technology, displays her commitment and dedication to her clients.
+                  </p>
+                  <p>
+                    Victoria was raised in Western Montana and appreciates what this beautiful state has to offer to those locally and for those who are planning to make it their home. She attended the University of Montana and Montana State University – Billings, earning her Bachelor of Science in Business Administration degree with an emphasis in marketing. During the summer months, you would likely see her on the golf course contributing to a fun group tournament or competing in state-level championships. She also enjoys hiking and skiing. Above all, Victoria loves spending time with her family.
+                  </p>
+                  <button
+                    onClick={() => setShowMore(false)}
+                    className="text-accent hover:text-accent/80 font-medium transition-colors"
+                  >
+                    Show less
+                  </button>
+                </>
+              )}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-6 border-t border-border">
