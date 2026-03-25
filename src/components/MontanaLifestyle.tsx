@@ -3,6 +3,7 @@ import { Mountain, TreePine, Sunrise, ChevronDown } from "lucide-react";
 import lifestyle1 from "@/assets/montana-lifestyle-1.jpg";
 import lifestyle2 from "@/assets/montana-lifestyle-2.jpg";
 import lifestyle3 from "@/assets/montana-lifestyle-3.jpg";
+import montanaExplore from "@/assets/montana-explore.jpg";
 
 const sections = [
   {
@@ -42,22 +43,35 @@ const MontanaLifestyle = () => {
       <div className="container max-w-6xl mx-auto px-4 md:px-6">
         <button
           onClick={() => setExpanded(!expanded)}
-          className="w-full text-center group cursor-pointer"
+          className="w-full cursor-pointer group"
         >
-          <p className="text-accent font-body text-sm tracking-[0.3em] uppercase mb-3">
-            Life in Montana
-          </p>
-          <h2 className="text-3xl md:text-5xl font-display text-foreground">
-            Where Adventure Meets Home
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground font-body text-lg leading-relaxed">
-            Montana isn't just a place to live — it's a way of life.
-          </p>
-          <ChevronDown
-            className={`mx-auto mt-4 w-6 h-6 text-accent transition-transform duration-300 ${
-              expanded ? "rotate-180" : ""
-            }`}
-          />
+          <div className="relative overflow-hidden rounded-xl shadow-lg">
+            <img
+              src={montanaExplore}
+              alt="Montana landscape"
+              loading="lazy"
+              width={1280}
+              height={512}
+              className="w-full aspect-[5/2] object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-foreground/40 group-hover:bg-foreground/30 transition-colors duration-300" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+              <p className="font-body text-sm tracking-[0.3em] uppercase mb-2 opacity-80">
+                Life in Montana
+              </p>
+              <h2 className="text-3xl md:text-5xl font-display mb-3">
+                Where Adventure Meets Home
+              </h2>
+              <p className="text-lg font-body opacity-90">
+                Click to explore life in Montana
+              </p>
+              <ChevronDown
+                className={`mt-3 w-6 h-6 transition-transform duration-300 ${
+                  expanded ? "rotate-180" : "animate-bounce"
+                }`}
+              />
+            </div>
+          </div>
         </button>
 
         <div
