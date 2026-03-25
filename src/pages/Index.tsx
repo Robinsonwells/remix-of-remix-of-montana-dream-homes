@@ -19,9 +19,6 @@ const Index = () => {
           <div className="w-full max-w-4xl px-4">
             <SignatureAnimation />
           </div>
-          <p className="mt-4 md:mt-8 text-base md:text-2xl font-display italic text-primary-foreground/90 text-center max-w-xl animate-fade-in">
-            Your next move starts with the right strategy
-          </p>
         </div>
       </section>
 
