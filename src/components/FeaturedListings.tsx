@@ -1,6 +1,18 @@
-import { Bath, BedDouble, Ruler, LandPlot } from "lucide-react";
+import { useState } from "react";
+import { Bath, BedDouble, Ruler, LandPlot, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+import exterior from "@/assets/listing-exterior.webp";
+import kitchenDining from "@/assets/listing-kitchen-dining.webp";
+import kitchen2 from "@/assets/listing-kitchen2.webp";
+import bedroom1 from "@/assets/listing-bedroom1.webp";
+import bedroom2 from "@/assets/listing-bedroom2.webp";
+import room from "@/assets/listing-room.webp";
+import backyard from "@/assets/listing-backyard.webp";
+import yard2 from "@/assets/listing-yard2.webp";
+import basement from "@/assets/listing-basement.webp";
+import laundry from "@/assets/listing-laundry.webp";
 
 const listings = [
   {
@@ -9,10 +21,51 @@ const listings = [
     baths: 3.5,
     sqft: "2,872",
     lotSize: "14,400",
+    lotUnit: "sq ft",
     address: "204 Tam Oshanter Rd, Billings, MT 59105",
-    image: "", // placeholder until user provides images
+    images: [exterior, kitchenDining, kitchen2, bedroom1, bedroom2, room, backyard, yard2, basement, laundry],
   },
 ];
+
+const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+
+  return (
+    <div className="relative aspect-[16/10] bg-muted group">
+      <img
+        src={images[current]}
+        alt={`${alt} - photo ${current + 1}`}
+        className="w-full h-full object-cover"
+      />
+      <button
+        onClick={prev}
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-foreground hover:bg-background"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-foreground hover:bg-background"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2 h-2 rounded-full transition-colors ${
+              i === current ? "bg-white" : "bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const FeaturedListings = () => {
   return (
@@ -25,26 +78,12 @@ const FeaturedListings = () => {
           Hand-picked properties just for you
         </p>
 
-        <div className="grid md:grid-cols-1 max-w-2xl mx-auto gap-8">
+        <div className="max-w-2xl mx-auto">
           {listings.map((listing, i) => (
             <Card key={i} className="overflow-hidden border-border/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="relative aspect-[16/10] bg-muted">
-                {listing.image ? (
-                  <img
-                    src={listing.image}
-                    alt={listing.address}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground font-body">
-                    Photo coming soon
-                  </div>
-                )}
-                <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground text-lg px-4 py-1 font-display">
-                  {listing.price}
-                </Badge>
-              </div>
+              <ImageCarousel images={listing.images} alt={listing.address} />
               <CardContent className="p-6">
+                <p className="text-2xl font-display text-foreground mb-3">{listing.price}</p>
                 <div className="flex flex-wrap gap-4 mb-4">
                   <div className="flex items-center gap-1.5 text-foreground font-body">
                     <BedDouble className="w-5 h-5 text-accent" />
@@ -60,7 +99,7 @@ const FeaturedListings = () => {
                   </div>
                   <div className="flex items-center gap-1.5 text-foreground font-body">
                     <LandPlot className="w-5 h-5 text-accent" />
-                    <span>{listing.lotSize} acre lot</span>
+                    <span>{listing.lotSize} {listing.lotUnit} lot</span>
                   </div>
                 </div>
                 <p className="text-muted-foreground font-body text-base">
