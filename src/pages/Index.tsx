@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import Testimonials from "@/components/Testimonials";
+import FeaturedListings from "@/components/FeaturedListings";
 import MontanaLifestyle from "@/components/MontanaLifestyle";
 import AboutSection from "@/components/AboutSection";
 import ContactForm from "@/components/ContactForm";
@@ -20,6 +21,7 @@ const Index = () => {
         </div>
       </section>
 
+      <FeaturedListings />
       <div id="testimonials">
         <Testimonials />
       </div>
