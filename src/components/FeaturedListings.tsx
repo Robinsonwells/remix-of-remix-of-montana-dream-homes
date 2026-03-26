@@ -26,6 +26,16 @@ import yard3 from "@/assets/listing-yard3.webp";
 import deck from "@/assets/listing-deck.webp";
 import deckwide from "@/assets/listing-deckwide.webp";
 import utility from "@/assets/listing-utility.webp";
+import openplan from "@/assets/listing-openplan.webp";
+import kitchen3 from "@/assets/listing-kitchen3.webp";
+import kitchen4 from "@/assets/listing-kitchen4.webp";
+import bathroom4 from "@/assets/listing-bathroom4.webp";
+import garage2 from "@/assets/listing-garage2.webp";
+import bathroom5 from "@/assets/listing-bathroom5.webp";
+import livingroom2 from "@/assets/listing-livingroom2.webp";
+import rear2 from "@/assets/listing-rear2.webp";
+import room2 from "@/assets/listing-room2.webp";
+import bedroom4 from "@/assets/listing-bedroom4.webp";
 
 const listings = [
   {
@@ -36,7 +46,7 @@ const listings = [
     lotSize: "14,400",
     lotUnit: "sq ft",
     address: "204 Tam Oshanter Rd, Billings, MT 59105",
-    images: [exterior, livingroom, kitchenDining, kitchen2, bedroom1, bedroom2, bedroom3, bathroom, bathroom2, bathroom3, room, backyard, yard2, yard3, deck, deckwide, deckview, rear, basement, garage, storage, utility, laundry],
+    images: [exterior, livingroom, livingroom2, openplan, kitchenDining, kitchen2, kitchen3, kitchen4, bedroom1, bedroom2, bedroom3, bedroom4, bathroom, bathroom2, bathroom3, bathroom4, bathroom5, room, room2, backyard, yard2, yard3, deck, deckwide, deckview, rear, rear2, basement, garage, garage2, storage, utility, laundry],
   },
 ];
 
@@ -65,16 +75,8 @@ const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
       >
         <ChevronRight className="w-5 h-5" />
       </button>
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-        {images.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              i === current ? "bg-white" : "bg-white/50"
-            }`}
-          />
-        ))}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-foreground/60 text-white px-3 py-1 rounded-full text-sm font-body">
+        {current + 1} / {images.length}
       </div>
     </div>
   );
