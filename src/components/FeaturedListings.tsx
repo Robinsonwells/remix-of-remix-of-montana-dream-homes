@@ -16,6 +16,16 @@ import laundry from "@/assets/listing-laundry.webp";
 import bathroom from "@/assets/listing-bathroom.webp";
 import livingroom from "@/assets/listing-livingroom.webp";
 import bedroom3 from "@/assets/listing-bedroom3.webp";
+import bathroom2 from "@/assets/listing-bathroom2.webp";
+import bathroom3 from "@/assets/listing-bathroom3.webp";
+import storage from "@/assets/listing-storage.webp";
+import garage from "@/assets/listing-garage.webp";
+import rear from "@/assets/listing-rear.webp";
+import deckview from "@/assets/listing-deckview.webp";
+import yard3 from "@/assets/listing-yard3.webp";
+import deck from "@/assets/listing-deck.webp";
+import deckwide from "@/assets/listing-deckwide.webp";
+import utility from "@/assets/listing-utility.webp";
 
 const listings = [
   {
@@ -26,7 +36,7 @@ const listings = [
     lotSize: "14,400",
     lotUnit: "sq ft",
     address: "204 Tam Oshanter Rd, Billings, MT 59105",
-    images: [exterior, livingroom, kitchenDining, kitchen2, bedroom1, bedroom2, bedroom3, bathroom, room, backyard, yard2, basement, laundry],
+    images: [exterior, livingroom, kitchenDining, kitchen2, bedroom1, bedroom2, bedroom3, bathroom, bathroom2, bathroom3, room, backyard, yard2, yard3, deck, deckwide, deckview, rear, basement, garage, storage, utility, laundry],
   },
 ];
 
