@@ -75,16 +75,8 @@ const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
       >
         <ChevronRight className="w-5 h-5" />
       </button>
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-        {images.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              i === current ? "bg-white" : "bg-white/50"
-            }`}
-          />
-        ))}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-foreground/60 text-white px-3 py-1 rounded-full text-sm font-body">
+        {current + 1} / {images.length}
       </div>
     </div>
   );
