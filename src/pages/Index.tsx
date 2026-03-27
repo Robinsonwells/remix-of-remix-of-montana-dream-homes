@@ -21,10 +21,10 @@ const Index = () => {
         </div>
       </section>
 
-      <FeaturedListings />
       <div id="testimonials">
         <Testimonials />
       </div>
+      <FeaturedListings />
       <MontanaLifestyle />
       <AboutSection />
       <ContactForm />
