@@ -58,6 +58,19 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <div className="flex items-center gap-3 px-6 py-4">
+            <span className="font-body text-xs tracking-wide italic text-foreground">Follow me</span>
+            <ArrowRight className="w-3 h-3 text-foreground" />
+            <a href="https://www.linkedin.com/in/victoria-brauer-gri-a58a12b/" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full p-1 transition-opacity hover:opacity-80">
+              <Linkedin className="w-4 h-4" style={{ color: "#0A66C2" }} />
+            </a>
+            <a href="https://www.facebook.com/VbkInMT" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full p-1 transition-opacity hover:opacity-80">
+              <Facebook className="w-4 h-4" style={{ color: "#1877F2" }} />
+            </a>
+            <a href="https://www.instagram.com/victoriabk_mtrealtor/" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full p-1 transition-opacity hover:opacity-80">
+              <Instagram className="w-4 h-4" style={{ color: "#E4405F" }} />
+            </a>
+          </div>
         </div>
       )}
     </nav>
