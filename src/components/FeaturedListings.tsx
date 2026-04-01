@@ -117,9 +117,17 @@ const FeaturedListings = () => {
                     <span>{listing.lotSize} {listing.lotUnit} lot</span>
                   </div>
                 </div>
-                <p className="text-muted-foreground font-body text-base">
+                <p className="text-muted-foreground font-body text-base mb-4">
                   {listing.address}
                 </p>
+                <a
+                  href="https://www.zillow.com/view-imx/f0f9d883-ac85-4f50-852b-0870d537fb88?setAttribution=mls&wl=true&initialViewType=pano&utm_source=dashboard"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6 text-sm font-medium transition-colors"
+                >
+                  View in 3D
+                </a>
               </CardContent>
             </Card>
           ))}
