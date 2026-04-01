@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Menu, X, Linkedin, Instagram, Facebook, ArrowRight } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -32,14 +32,16 @@ const Navbar = () => {
             </a>
           ))}
           <div className="flex items-center gap-3 ml-2">
-            <a href="https://www.linkedin.com/in/victoria-brauer-gri-a58a12b/" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-              <Linkedin className="w-4 h-4" />
+            <span className={`font-body text-xs tracking-wide italic ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>Follow me</span>
+            <ArrowRight className={`w-3 h-3 ${scrolled ? "text-foreground" : "text-primary-foreground"}`} />
+            <a href="https://www.linkedin.com/in/victoria-brauer-gri-a58a12b/" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+              <Linkedin className="w-4 h-4" style={{ color: "#0A66C2" }} />
             </a>
-            <a href="https://www.facebook.com/VbkInMT" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-              <Facebook className="w-4 h-4" />
+            <a href="https://www.facebook.com/VbkInMT" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+              <Facebook className="w-4 h-4" style={{ color: "#1877F2" }} />
             </a>
-            <a href="https://www.instagram.com/victoriabk_mtrealtor/" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-              <Instagram className="w-4 h-4" />
+            <a href="https://www.instagram.com/victoriabk_mtrealtor/" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+              <Instagram className="w-4 h-4" style={{ color: "#E4405F" }} />
             </a>
           </div>
         </div>
