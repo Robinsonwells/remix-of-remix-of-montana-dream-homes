@@ -31,6 +31,17 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <div className="flex items-center gap-3 ml-2">
+            <a href="https://www.linkedin.com/in/victoria-brauer-gri-a58a12b/" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a href="https://www.facebook.com/VbkInMT" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+              <Facebook className="w-4 h-4" />
+            </a>
+            <a href="https://www.instagram.com/victoriabk_mtrealtor/" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+              <Instagram className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
         <button onClick={() => setOpen(!open)} className={`md:hidden ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
