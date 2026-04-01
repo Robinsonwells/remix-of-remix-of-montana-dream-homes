@@ -17,7 +17,7 @@ const Index = () => {
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4 md:px-6">
           <h1 className="text-3xl md:text-7xl font-display text-white mb-12 animate-fade-in">Welcome to</h1>
           <p className="text-4xl md:text-8xl text-white font-lobster animate-fade-in">Real Estate with Victoria</p>
-          <p className="text-xl md:text-4xl text-white/90 mt-8 font-display tracking-wide animate-fade-in">Your next move starts here</p>
+          <p className="text-xl md:text-4xl text-white/90 mt-8 font-display tracking-wide animate-fade-in">Your next home or land</p>
         </div>
       </section>
 
