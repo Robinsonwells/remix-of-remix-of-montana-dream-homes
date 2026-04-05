@@ -75,7 +75,6 @@ const ContactForm = () => {
           <div>
             <p className="text-accent font-body text-sm tracking-[0.3em] uppercase mb-3">Get in Touch</p>
             <h2 className="text-3xl md:text-4xl font-display text-primary-foreground mb-4 md:mb-6">Find Your Next Home or Property</h2>
-            <p className="text-xl md:text-2xl text-accent font-display mb-4">Your next move starts here</p>
             <p className="text-primary-foreground/70 font-body leading-relaxed mb-10">
               Ready to start your Montana real estate journey? Reach out today and let's make your next move the right one.
             </p>
