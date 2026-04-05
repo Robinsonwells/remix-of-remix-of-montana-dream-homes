@@ -15,9 +15,9 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <HeroSlideshow />
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4 md:px-6">
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-0 md:px-6">
           <h1 className="text-3xl md:text-7xl font-display text-white mb-1 animate-fade-in">Welcome to</h1>
-          <img src={logoSvg} alt="Real Estate with Victoria" className="w-full max-w-7xl h-auto animate-fade-in px-4" />
+          <img src={logoSvg} alt="Real Estate with Victoria" className="w-full max-w-7xl h-auto animate-fade-in px-1 md:px-4" />
           
         </div>
       </section>
