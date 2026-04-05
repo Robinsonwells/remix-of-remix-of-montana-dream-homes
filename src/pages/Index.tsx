@@ -17,7 +17,7 @@ const Index = () => {
         <HeroSlideshow />
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4 md:px-6">
           <h1 className="text-3xl md:text-7xl font-display text-white mb-12 animate-fade-in">Welcome to</h1>
-          <img src={logoSvg} alt="Real Estate with Victoria" className="w-[90%] max-w-2xl h-auto animate-fade-in invert" />
+          <img src={logoSvg} alt="Real Estate with Victoria" className="w-[90%] max-w-2xl h-auto animate-fade-in" />
           <p className="text-xl md:text-4xl text-white/90 mt-8 font-display tracking-wide animate-fade-in">Your next home or land</p>
         </div>
       </section>
