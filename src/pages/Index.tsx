@@ -19,7 +19,7 @@ const Index = () => {
           <h1 className="text-3xl md:text-7xl font-display text-white mb-1 animate-fade-in">Welcome to</h1>
           <img src={logoSvg} alt="Real Estate with Victoria" className="w-[140vw] max-w-none h-auto animate-fade-in md:w-screen" />
         </div>
-        <p className="absolute <p className="absolute bottom-16 left-0 right-0 text-center text-3xl md:text-5xl font-display text-white/90 z-10 animate-fade-in tracking-wide"> left-0 right-0 text-center text-3xl md:text-5xl font-display text-white/90 z-10 animate-fade-in tracking-wide">
+        <p className="absolute bottom-16 left-0 right-0 text-center text-3xl md:text-5xl font-display text-white/90 z-10 animate-fade-in tracking-wide">
           Your next move starts here
         </p>
       </section>
