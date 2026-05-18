@@ -58,11 +58,18 @@ const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
 
   return (
     <div className="relative aspect-[16/10] bg-muted group">
-      <img
-        src={images[current]}
-        alt={`${alt} - photo ${current + 1}`}
-        className="w-full h-full object-cover"
-      />
+      {images.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={`${alt} - photo ${i + 1}`}
+          loading="eager"
+          decoding="async"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${
+            i === current ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
       <button
         onClick={prev}
         className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-foreground hover:bg-background"
