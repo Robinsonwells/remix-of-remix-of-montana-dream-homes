@@ -39,7 +39,7 @@ import bedroom4 from "@/assets/listing-bedroom4.webp";
 
 const listings = [
   {
-    price: "$479,900",
+    price: "$469,900",
     beds: 3,
     baths: 3.5,
     sqft: "2,872",
