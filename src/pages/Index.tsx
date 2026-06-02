@@ -6,6 +6,7 @@ import MontanaLifestyle from "@/components/MontanaLifestyle";
 import AboutSection from "@/components/AboutSection";
 import ContactForm from "@/components/ContactForm";
 import logoSvg from "@/assets/real-estate-with-victoria-logo.svg";
+import barLogo from "@/assets/bar-member-logo.png.asset.json";
 
 const Index = () => {
   return (
@@ -31,6 +32,14 @@ const Index = () => {
       <MontanaLifestyle />
       <AboutSection />
       <ContactForm />
+      <footer className="w-full flex justify-center py-10 bg-background">
+        <img
+          src={barLogo.url}
+          alt="Proud Member of the Billings Association of Realtors"
+          className="h-24 md:h-32 w-auto"
+          loading="lazy"
+        />
+      </footer>
     </div>
   );
 };
