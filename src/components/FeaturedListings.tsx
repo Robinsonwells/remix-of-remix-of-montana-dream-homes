@@ -39,7 +39,8 @@ import bedroom4 from "@/assets/listing-bedroom4.webp";
 
 const listings = [
   {
-    price: "$469,900",
+    price: "$450,000",
+    priceNote: "Price Improvement",
     beds: 3,
     baths: 3.5,
     sqft: "2,872",
@@ -105,7 +106,12 @@ const FeaturedListings = () => {
             <Card key={i} className="overflow-hidden border-border/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <ImageCarousel images={listing.images} alt={listing.address} />
               <CardContent className="p-6">
-                <p className="text-2xl font-display text-foreground mb-3">{listing.price}</p>
+                <div className="flex items-center gap-3 mb-3">
+                  <p className="text-2xl font-display text-foreground">{listing.price}</p>
+                  <Badge variant="secondary" className="bg-green-100 text-green-800 font-body text-xs">
+                    {listing.priceNote}
+                  </Badge>
+                </div>
                 <div className="flex flex-wrap gap-4 mb-4">
                   <div className="flex items-center gap-1.5 text-foreground font-body">
                     <BedDouble className="w-5 h-5 text-accent" />
