@@ -37,6 +37,18 @@ import rear2 from "@/assets/listing-rear2.webp";
 import room2 from "@/assets/listing-room2.webp";
 import bedroom4 from "@/assets/listing-bedroom4.webp";
 
+// 1301 Whispering Pines Drive
+import wpExterior from "@/assets/wp-exterior.webp";
+import wpAerial1 from "@/assets/wp-aerial1.webp";
+import wpAerial2 from "@/assets/wp-aerial2.webp";
+import wpDeck from "@/assets/wp-deck.webp";
+import wpLiving from "@/assets/wp-living.webp";
+import wpDining from "@/assets/wp-dining.webp";
+import wpBedroom from "@/assets/wp-bedroom.webp";
+import wpBasement from "@/assets/wp-basement.webp";
+import wpShop from "@/assets/wp-shop.webp";
+import wpShop2 from "@/assets/wp-shop2.webp";
+
 const listings = [
   {
     price: "$450,000",
@@ -48,6 +60,20 @@ const listings = [
     lotUnit: "sq ft",
     address: "204 Tam Oshanter Rd, Billings, MT 59105",
     images: [exterior, livingroom, livingroom2, openplan, kitchenDining, kitchen2, kitchen3, kitchen4, bedroom1, bedroom2, bedroom3, bedroom4, bathroom, bathroom2, bathroom3, bathroom4, bathroom5, room, room2, backyard, yard2, yard3, deck, deckwide, deckview, rear, rear2, basement, garage, garage2, storage, utility, laundry],
+    tourUrl: "https://www.zillow.com/view-imx/f0f9d883-ac85-4f50-852b-0870d537fb88?setAttribution=mls&wl=true&initialViewType=pano&utm_source=dashboard",
+    tourLabel: "View in 3D",
+  },
+  {
+    price: "$659,900",
+    beds: 5,
+    baths: 3,
+    sqft: "3,480",
+    lotSize: "1.97",
+    lotUnit: "acres",
+    address: "1301 Whispering Pines Drive, Billings, MT 59101",
+    images: [wpExterior, wpAerial1, wpAerial2, wpDeck, wpLiving, wpDining, wpBedroom, wpBasement, wpShop, wpShop2],
+    tourUrl: "https://www.propertypanorama.com/instaview-elite/bmt/359837#tour",
+    tourLabel: "View the Slideshow",
   },
 ];
 
@@ -101,16 +127,18 @@ const FeaturedListings = () => {
           Hand-picked properties just for you
         </p>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto space-y-10">
           {listings.map((listing, i) => (
             <Card key={i} className="overflow-hidden border-border/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <ImageCarousel images={listing.images} alt={listing.address} />
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <p className="text-2xl font-display text-foreground">{listing.price}</p>
-                  <Badge variant="secondary" className="bg-green-100 text-green-800 font-body text-xs">
-                    {listing.priceNote}
-                  </Badge>
+                  {listing.priceNote && (
+                    <Badge variant="secondary" className="bg-green-100 text-green-800 font-body text-xs">
+                      {listing.priceNote}
+                    </Badge>
+                  )}
                 </div>
                 <div className="flex flex-wrap gap-4 mb-4">
                   <div className="flex items-center gap-1.5 text-foreground font-body">
@@ -134,12 +162,12 @@ const FeaturedListings = () => {
                   {listing.address}
                 </p>
                 <a
-                  href="https://www.zillow.com/view-imx/f0f9d883-ac85-4f50-852b-0870d537fb88?setAttribution=mls&wl=true&initialViewType=pano&utm_source=dashboard"
+                  href={listing.tourUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6 text-sm font-medium transition-colors"
                 >
-                  View in 3D
+                  {listing.tourLabel}
                 </a>
               </CardContent>
             </Card>
