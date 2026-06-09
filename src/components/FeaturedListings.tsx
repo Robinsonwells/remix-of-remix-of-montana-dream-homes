@@ -134,7 +134,6 @@ const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
             src={src}
             alt={`${alt} - photo ${i + 1}`}
             loading={i === 0 ? "eager" : "lazy"}
-            fetchPriority={i === current ? "high" : "low"}
             decoding="async"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${
               i === current ? "opacity-100" : "opacity-0"
