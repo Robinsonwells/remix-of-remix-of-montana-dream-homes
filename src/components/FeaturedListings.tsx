@@ -37,6 +37,18 @@ import rear2 from "@/assets/listing-rear2.webp";
 import room2 from "@/assets/listing-room2.webp";
 import bedroom4 from "@/assets/listing-bedroom4.webp";
 
+// 1301 Whispering Pines Drive
+import wpExterior from "@/assets/wp-exterior.webp";
+import wpAerial1 from "@/assets/wp-aerial1.webp";
+import wpAerial2 from "@/assets/wp-aerial2.webp";
+import wpDeck from "@/assets/wp-deck.webp";
+import wpLiving from "@/assets/wp-living.webp";
+import wpDining from "@/assets/wp-dining.webp";
+import wpBedroom from "@/assets/wp-bedroom.webp";
+import wpBasement from "@/assets/wp-basement.webp";
+import wpShop from "@/assets/wp-shop.webp";
+import wpShop2 from "@/assets/wp-shop2.webp";
+
 const listings = [
   {
     price: "$450,000",
@@ -48,6 +60,20 @@ const listings = [
     lotUnit: "sq ft",
     address: "204 Tam Oshanter Rd, Billings, MT 59105",
     images: [exterior, livingroom, livingroom2, openplan, kitchenDining, kitchen2, kitchen3, kitchen4, bedroom1, bedroom2, bedroom3, bedroom4, bathroom, bathroom2, bathroom3, bathroom4, bathroom5, room, room2, backyard, yard2, yard3, deck, deckwide, deckview, rear, rear2, basement, garage, garage2, storage, utility, laundry],
+    tourUrl: "https://www.zillow.com/view-imx/f0f9d883-ac85-4f50-852b-0870d537fb88?setAttribution=mls&wl=true&initialViewType=pano&utm_source=dashboard",
+    tourLabel: "View in 3D",
+  },
+  {
+    price: "$659,900",
+    beds: 5,
+    baths: 3,
+    sqft: "3,480",
+    lotSize: "1.97",
+    lotUnit: "acres",
+    address: "1301 Whispering Pines Drive, Billings, MT 59101",
+    images: [wpExterior, wpAerial1, wpAerial2, wpDeck, wpLiving, wpDining, wpBedroom, wpBasement, wpShop, wpShop2],
+    tourUrl: "https://www.propertypanorama.com/instaview-elite/bmt/359837#tour",
+    tourLabel: "View the Slideshow",
   },
 ];
 
