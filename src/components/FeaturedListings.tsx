@@ -48,6 +48,16 @@ import wpBedroom from "@/assets/wp-bedroom.webp";
 import wpBasement from "@/assets/wp-basement.webp";
 import wpShop from "@/assets/wp-shop.webp";
 import wpShop2 from "@/assets/wp-shop2.webp";
+import wpLiving2 from "@/assets/wp-living2.webp";
+import wpKitchen from "@/assets/wp-kitchen.webp";
+import wpDeck2 from "@/assets/wp-deck2.webp";
+import wpBedroom2 from "@/assets/wp-bedroom2.webp";
+import wpBedroom3 from "@/assets/wp-bedroom3.webp";
+import wpBedroom4 from "@/assets/wp-bedroom4.webp";
+import wpBedroom5 from "@/assets/wp-bedroom5.webp";
+import wpBathroom from "@/assets/wp-bathroom.webp";
+import wpLogHome1 from "@/assets/wp-loghome1.webp";
+import wpLogHome2 from "@/assets/wp-loghome2.webp";
 
 const listings = [
   {
@@ -71,7 +81,7 @@ const listings = [
     lotSize: "1.97",
     lotUnit: "acres",
     address: "1301 Whispering Pines Drive, Billings, MT 59101",
-    images: [wpExterior, wpAerial1, wpAerial2, wpDeck, wpLiving, wpDining, wpBedroom, wpBasement, wpShop, wpShop2],
+    images: [wpExterior, wpAerial1, wpAerial2, wpDeck, wpDeck2, wpLiving, wpLiving2, wpDining, wpKitchen, wpBedroom, wpBedroom2, wpBedroom3, wpBedroom4, wpBedroom5, wpBathroom, wpBasement, wpLogHome1, wpLogHome2, wpShop, wpShop2],
     tourUrl: "https://www.propertypanorama.com/instaview-elite/bmt/359837#tour",
     tourLabel: "View the Slideshow",
   },
