@@ -76,14 +76,6 @@ import wpLaundry from "@/assets/wp-laundry.webp";
 import wpBathroom2 from "@/assets/wp-bathroom2.webp";
 import wpAerial3 from "@/assets/wp-aerial3.webp";
 import wpAerial4 from "@/assets/wp-aerial4.webp";
-import wpExterior3 from "@/assets/wp-exterior3.webp";
-import wpLiving5 from "@/assets/wp-living5.webp";
-import wpDining2 from "@/assets/wp-dining2.webp";
-import wpKitchen2 from "@/assets/wp-kitchen2.webp";
-import wpOffice from "@/assets/wp-office.webp";
-import wpFamilyRoom from "@/assets/wp-familyroom.webp";
-import wpUtility from "@/assets/wp-utility.webp";
-import wpShop3 from "@/assets/wp-shop3.webp";
 import wpExterior4 from "@/assets/wp-exterior4.webp";
 import wpDining3 from "@/assets/wp-dining3.webp";
 import wpBar from "@/assets/wp-bar.webp";
@@ -114,7 +106,7 @@ const listings = [
     lotSize: "1.97",
     lotUnit: "acres",
     address: "1301 Whispering Pines Drive, Billings, MT 59101",
-    images: [wpExterior, wpExterior2, wpExterior3, wpExterior4, wpAerial1, wpAerial2, wpAerial3, wpAerial4, wpDeck, wpDeck2, wpEntry, wpHallway, wpLiving, wpLiving2, wpLiving3, wpLiving4, wpLiving5, wpLiving6, wpFamilyRoom, wpFamilyRoom2, wpDining, wpDining2, wpDining3, wpBar, wpKitchen, wpKitchen2, wpBedroom, wpBedroom2, wpBedroom3, wpBedroom4, wpBedroom5, wpBedroom6, wpOffice, wpBathroom, wpBathroom2, wpBathroom3, wpLaundry, wpBasement, wpUtility, wpGarage, wpLogHome1, wpLogHome2, wpLogHome3, wpShop, wpShop2, wpShop3],
+    images: [wpExterior, wpExterior2, wpExterior4, wpAerial1, wpAerial2, wpAerial3, wpAerial4, wpDeck, wpDeck2, wpEntry, wpHallway, wpLiving, wpLiving2, wpLiving3, wpLiving4, wpLiving6, wpFamilyRoom2, wpDining, wpDining3, wpBar, wpKitchen, wpBedroom, wpBedroom2, wpBedroom3, wpBedroom4, wpBedroom5, wpBedroom6, wpBathroom, wpBathroom2, wpBathroom3, wpLaundry, wpBasement, wpGarage, wpLogHome1, wpLogHome2, wpLogHome3, wpShop, wpShop2],
     tourUrl: "https://www.propertypanorama.com/instaview-elite/bmt/359837#tour",
     tourLabel: "View the Slideshow",
   },
@@ -142,7 +134,6 @@ const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
             src={src}
             alt={`${alt} - photo ${i + 1}`}
             loading={i === 0 ? "eager" : "lazy"}
-            fetchPriority={i === current ? "high" : "low"}
             decoding="async"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${
               i === current ? "opacity-100" : "opacity-0"
