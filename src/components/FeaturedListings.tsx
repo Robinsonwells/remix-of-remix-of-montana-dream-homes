@@ -67,6 +67,16 @@ import wpLiving4 from "@/assets/wp-living4.webp";
 import wpGarage from "@/assets/wp-garage.webp";
 import wpLaundry from "@/assets/wp-laundry.webp";
 import wpBathroom2 from "@/assets/wp-bathroom2.webp";
+import wpAerial3 from "@/assets/wp-aerial3.webp";
+import wpAerial4 from "@/assets/wp-aerial4.webp";
+import wpExterior3 from "@/assets/wp-exterior3.webp";
+import wpLiving5 from "@/assets/wp-living5.webp";
+import wpDining2 from "@/assets/wp-dining2.webp";
+import wpKitchen2 from "@/assets/wp-kitchen2.webp";
+import wpOffice from "@/assets/wp-office.webp";
+import wpFamilyRoom from "@/assets/wp-familyroom.webp";
+import wpUtility from "@/assets/wp-utility.webp";
+import wpShop3 from "@/assets/wp-shop3.webp";
 
 const listings = [
   {
@@ -90,7 +100,7 @@ const listings = [
     lotSize: "1.97",
     lotUnit: "acres",
     address: "1301 Whispering Pines Drive, Billings, MT 59101",
-    images: [wpExterior, wpExterior2, wpAerial1, wpAerial2, wpDeck, wpDeck2, wpEntry, wpHallway, wpLiving, wpLiving2, wpLiving3, wpLiving4, wpDining, wpKitchen, wpBedroom, wpBedroom2, wpBedroom3, wpBedroom4, wpBedroom5, wpBathroom, wpBathroom2, wpLaundry, wpBasement, wpGarage, wpLogHome1, wpLogHome2, wpLogHome3, wpShop, wpShop2],
+    images: [wpExterior, wpExterior2, wpExterior3, wpAerial1, wpAerial2, wpAerial3, wpAerial4, wpDeck, wpDeck2, wpEntry, wpHallway, wpLiving, wpLiving2, wpLiving3, wpLiving4, wpLiving5, wpFamilyRoom, wpDining, wpDining2, wpKitchen, wpKitchen2, wpBedroom, wpBedroom2, wpBedroom3, wpBedroom4, wpBedroom5, wpOffice, wpBathroom, wpBathroom2, wpLaundry, wpBasement, wpUtility, wpGarage, wpLogHome1, wpLogHome2, wpLogHome3, wpShop, wpShop2, wpShop3],
     tourUrl: "https://www.propertypanorama.com/instaview-elite/bmt/359837#tour",
     tourLabel: "View the Slideshow",
   },
