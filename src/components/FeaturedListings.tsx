@@ -121,18 +121,28 @@ const ImageCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
 
   return (
     <div className="relative aspect-[16/10] bg-muted group">
-      {images.map((src, i) => (
-        <img
-          key={src}
-          src={src}
-          alt={`${alt} - photo ${i + 1}`}
-          loading="eager"
-          decoding="async"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${
-            i === current ? "opacity-100" : "opacity-0"
-          }`}
-        />
-      ))}
+      {images.map((src, i) => {
+        // Only mount the current image plus its immediate neighbors so the
+        // browser doesn't download dozens of photos upfront.
+        const distance = Math.min(
+          Math.abs(i - current),
+          images.length - Math.abs(i - current)
+        );
+        if (distance > 1) return null;
+        return (
+          <img
+            key={src}
+            src={src}
+            alt={`${alt} - photo ${i + 1}`}
+            loading={i === 0 ? "eager" : "lazy"}
+            fetchPriority={i === current ? "high" : "low"}
+            decoding="async"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${
+              i === current ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        );
+      })}
       <button
         onClick={prev}
         className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-background/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-foreground hover:bg-background"
