@@ -2,6 +2,13 @@ import { useState } from "react";
 import { Bath, BedDouble, Ruler, LandPlot, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 import exterior from "@/assets/listing-exterior.webp";
 import kitchenDining from "@/assets/listing-kitchen-dining.webp";
@@ -173,9 +180,14 @@ const FeaturedListings = () => {
           Hand-picked properties just for you
         </p>
 
-        <div className="max-w-2xl mx-auto space-y-10">
-          {listings.map((listing, i) => (
-            <Card key={i} className="overflow-hidden border-border/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="max-w-6xl mx-auto"
+        >
+          <CarouselContent className="-ml-6">
+            {listings.map((listing, i) => (
+              <CarouselItem key={i} className="pl-6 md:basis-1/2">
+                <Card className="overflow-hidden border-border/50 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
               <ImageCarousel images={listing.images} alt={listing.address} />
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-3">
@@ -216,9 +228,13 @@ const FeaturedListings = () => {
                   {listing.tourLabel}
                 </a>
               </CardContent>
-            </Card>
-          ))}
-        </div>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-4" />
+          <CarouselNext className="hidden md:flex -right-4" />
+        </Carousel>
       </div>
     </section>
   );
