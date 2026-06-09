@@ -106,7 +106,7 @@ const listings = [
     lotSize: "1.97",
     lotUnit: "acres",
     address: "1301 Whispering Pines Drive, Billings, MT 59101",
-    images: [wpExterior, wpExterior2, wpExterior4, wpAerial1, wpAerial2, wpAerial3, wpAerial4, wpDeck, wpDeck2, wpEntry, wpHallway, wpLiving, wpLiving2, wpLiving3, wpLiving4, wpLiving6, wpFamilyRoom2, wpDining, wpDining3, wpBar, wpKitchen, wpBedroom, wpBedroom2, wpBedroom3, wpBedroom4, wpBedroom5, wpBedroom6, wpBathroom, wpBathroom2, wpBathroom3, wpLaundry, wpBasement, wpGarage, wpLogHome1, wpLogHome2, wpLogHome3, wpShop, wpShop2],
+    images: [wpAerial1, wpExterior, wpExterior2, wpExterior4, wpAerial2, wpAerial3, wpAerial4, wpDeck, wpDeck2, wpEntry, wpHallway, wpLiving, wpLiving2, wpLiving3, wpLiving4, wpLiving6, wpFamilyRoom2, wpDining, wpDining3, wpBar, wpKitchen, wpBedroom, wpBedroom2, wpBedroom3, wpBedroom4, wpBedroom5, wpBedroom6, wpBathroom, wpBathroom2, wpBathroom3, wpLaundry, wpBasement, wpGarage, wpLogHome1, wpLogHome2, wpLogHome3, wpShop, wpShop2],
     tourUrl: "https://www.propertypanorama.com/instaview-elite/bmt/359837#tour",
     tourLabel: "View the Slideshow",
   },
@@ -223,8 +223,6 @@ const FeaturedListings = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-4" />
-          <CarouselNext className="hidden md:flex -right-4" />
         </Carousel>
       </div>
     </section>
