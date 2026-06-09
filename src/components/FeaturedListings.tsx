@@ -127,16 +127,18 @@ const FeaturedListings = () => {
           Hand-picked properties just for you
         </p>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto space-y-10">
           {listings.map((listing, i) => (
             <Card key={i} className="overflow-hidden border-border/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <ImageCarousel images={listing.images} alt={listing.address} />
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <p className="text-2xl font-display text-foreground">{listing.price}</p>
-                  <Badge variant="secondary" className="bg-green-100 text-green-800 font-body text-xs">
-                    {listing.priceNote}
-                  </Badge>
+                  {listing.priceNote && (
+                    <Badge variant="secondary" className="bg-green-100 text-green-800 font-body text-xs">
+                      {listing.priceNote}
+                    </Badge>
+                  )}
                 </div>
                 <div className="flex flex-wrap gap-4 mb-4">
                   <div className="flex items-center gap-1.5 text-foreground font-body">
@@ -160,12 +162,12 @@ const FeaturedListings = () => {
                   {listing.address}
                 </p>
                 <a
-                  href="https://www.zillow.com/view-imx/f0f9d883-ac85-4f50-852b-0870d537fb88?setAttribution=mls&wl=true&initialViewType=pano&utm_source=dashboard"
+                  href={listing.tourUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6 text-sm font-medium transition-colors"
                 >
-                  View in 3D
+                  {listing.tourLabel}
                 </a>
               </CardContent>
             </Card>
